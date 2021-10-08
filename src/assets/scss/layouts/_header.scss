@@ -1,0 +1,18 @@
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include media(phone) {
+        padding: 20px 0;
+    }
+    @include media(pc) {
+        padding: 41px 0;
+    }
+    max-height: 100px;
+    position: absolute;
+    background-color: rgba(16,16,29, .9);
+  
+    .container {
+        justify-content: space-between;
+    }
+}

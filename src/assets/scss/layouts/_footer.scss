@@ -1,0 +1,68 @@
+.footer {
+    bottom: 0;
+    line-height: 1;
+    padding: 30px 0;
+    background-color: #3d4050;
+
+    .container {
+        justify-content: space-between;
+
+        @include media(phone) {
+            flex-direction: column;
+        }
+
+        @include media(pc) {
+            flex-direction: column;
+        }
+
+        @include media(desktop) {
+            flex-direction: row;
+        }
+    }
+
+    &__col {
+        position: relative;
+
+        @include media(phone) {
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        @include media(pc) {
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        @include media(desktop) {
+            padding: 0 40px;
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &:not(:last-child)::after {
+            @include media(phone) {
+                width: 0;
+            }
+
+            @include media(pc) {
+                width: 0;
+            }
+
+            @include media(desktop) {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 1px;
+                height: 18px;
+                background-color: #c3c3c3;
+            }
+        }
+    }
+}

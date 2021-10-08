@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    @include media(phone) {
+        width: $container-phone;
+    }
+    @include media(pc) {
+        width: $container-pc;
+    }
+    @include media(desktop) {
+        width: $container-desktop;
+    }
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}

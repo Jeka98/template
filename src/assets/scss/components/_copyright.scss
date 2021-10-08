@@ -1,0 +1,15 @@
+.footer__copyright {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 18px;
+    @include media(phone-wide) {
+        text-align: center;
+    }
+    @include media(pc) {
+        text-align: left;
+    }
+
+    span {
+        text-transform: uppercase;
+    }
+}

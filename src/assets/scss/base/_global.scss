@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    @include font-styles($text-size, $text-color, $font-weight, $lh-size, $font-family);
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+    letter-spacing: 0;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.4s ease-out;
+    @include font-styles($color: $link-color);
+    &:hover,
+    &.active {
+        @include font-styles($color: $hover-link-color);
+    }
+}
+
+input {
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 3px;
+    padding: 14px 10px;
+    background-color: $bg-input;
+    @include input-placeholder {
+        @include font-styles($size: 18px, $color: #272733);
+    }
+
+    @include font-styles($size: $placeholder-size, $color: $placeholder-color);
+
+    @include media(phone) {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    @include media(pc) {
+        width: 288px;
+        margin-top: 0;
+    }
+
+    @include media(desktop) {
+        width: 370px;
+    }
+
+    &:focus {
+        outline: 0;
+        background-color: $focus-field-bg-color;
+        @include input-placeholder {
+            @include font-styles($size: 18px, $color: #ffffff);
+        }
+        @include font-styles($color: $focus-field-text-color);
+    }
+
+    &[type="range"] {
+        width: 100%;
+        background: transparent;
+        -webkit-appearance: none;
+
+        &::-webkit-slider {
+            &-thumb {
+                -webkit-appearance: none;
+            }
+        }
+
+        &:-ms-track {
+            width: 100%;
+            cursor: pointer;
+            color: transparent;
+            background: transparent;
+            border-color: transparent;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+ul,
+ol {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.button {
+    outline: 0;
+    border: $border;
+    cursor: pointer;
+    background: {
+        color: $bg-button;
+    }
+    transition: {
+        duration: 0.4s;
+        property: background-color;
+        timing-function: ease-in-out;
+    }
+    &:hover {
+        background: {
+            color: $bg-hover-button;
+        }
+    }
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+.sr-only {
+    border: 0;
+    width: 1px;
+    padding: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+.title {
+    margin-bottom: 20px;
+    @include font-styles($size: $title-size, $color: $title-color, $weight: 800);
+    span {
+        @include font-styles($color: $title-span-color);
+    }
+}
+
+.fixed-header {
+    position: fixed !important;
+    top: 0;
+    z-index: 100;
+}

@@ -1,0 +1,87 @@
+.contacts-list {
+    display: flex;
+
+    @include media(phone) {
+        justify-content: center;
+        flex-direction: column;
+    }
+    @include media(pc) {
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        line-height: 18px;
+        font-size: 13px;
+        color: #fff;
+
+        @include media(pc) {
+            margin-bottom: 5px;
+        }
+        @include media(desktop) {
+            margin-right: 75px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        position: relative;
+        @include media(pc) {
+            display: flex;
+            align-items: center;
+        }
+        @include media(desktop) {
+            width: auto;
+            height: auto;
+            font-size: 13px;
+        }
+
+        &:before {
+            top: 0;
+            content: "";
+            height: 13px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            @include media(phone) {
+                margin-right: 10px;
+            }
+            @include media(pc) {
+                margin-right: 10px;
+                position: static;
+            }
+            @include media(desktop) {
+                position: absolute;
+            }
+        }
+
+        &.vk {
+            &:before {
+                left: -20px;
+                top: 2px;
+                width: 11px;
+                background-image: url(../img/icons/vk.png);
+
+                @include media(phone) {
+                    margin-left: 3px;
+                    width: 12px;
+                }
+            }
+        }
+
+        &.mail {
+            &:before {
+                left: -25px;
+                top: 2px;
+                width: 15px;
+                background-image: url(../img/icons/mail.png);
+            }
+        }
+    }
+}
